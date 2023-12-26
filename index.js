@@ -7,7 +7,7 @@ const importData = require("./data.json")
 let port = process.env.PORT || 3000
 
 app.get("/", (req, res) => {
-    res.send("Hello, World! V3")
+    res.send("Hello, World! V4")
 })
 
 app.get("/apiData", (req, res) => {
@@ -31,8 +31,9 @@ app.post('/', (req, res) => {
   
     // Read the JSON body contents
     const jsonBody = req.body.content;
+    const givenAPIKey1 = req.body.key;
   
-    if (givenAPIKey != jsonBody) {
+    if (givenAPIKey1 != jsonBody) {
       return
     }
 
