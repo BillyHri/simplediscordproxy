@@ -1,6 +1,7 @@
 const express = require("express")
 const app = express()
 app.use(express.json());
+require('dotenv').config()
 
 const importData = require("./data.json")
 
@@ -33,9 +34,8 @@ app.post('/', (req, res) => {
     const jsonBody = req.body.content;
     const givenAPIKey1 = req.body.key;
   
-    if (givenAPIKey1 != jsonBody) {
-      console.log("wth is this!!")
-      return
+    if (process.env.APIKey != JSON.stringify(jsonBody)) {
+      return res.status(401).json({ error: "Unauthorized" });
     }
 
     // Do something with the JSON data (you can store it, process it, etc.)
