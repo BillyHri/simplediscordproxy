@@ -18,7 +18,7 @@ app.listen(port, () => {
     console.log(`proxy is listening on this port: ${3000}`)
 })
 
-app.post('/test123', (req, res) => {
+app.post('/', (req, res) => {
     // Get the 'webhook' query parameter
     const webhookParam = req.query.webhook;
   
@@ -44,7 +44,7 @@ app.post('/test123', (req, res) => {
     redirect: 'follow'
   };
   
-  fetch("https://discord.com/api/webhooks/1189159272232275998/2PnUa6pkXUtAcHoLhl2W_STkrdNZiJhs1lX866xHylMHoBM1bnVi2jO8zdsnA3yh7QgF", requestOptions)
+  fetch(`${webhookParam}`, requestOptions)
     .then(response => response.text())
     .then(result => console.log(result))
     .catch(error => console.log('error', error));
