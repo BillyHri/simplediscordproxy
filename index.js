@@ -22,6 +22,7 @@ app.listen(port, () => {
 app.post('/', async (req, res) => {
     // Get the 'webhook' query parameter
     const webhookParam = req.query.webhook;
+    const rawBody = req.body
     const jsonBody = req.body.content;
     const givenAPIKey = req.body.key;
 
@@ -33,14 +34,19 @@ app.post('/', async (req, res) => {
    //     return res.status(401).json({ error: "Invalid discord webhook. This proxy is currently only being used for discord.com based webhooks." });
    //  }
 
+   if ("key" in rawBody) {
+    // Remove the "Key" from the jsonBody
+    delete rawBody.key;
+  }
+
+  console.log(rawBody)
+
  var requestOptions = {
     method: 'POST',
     headers: {
   "Content-Type": "application/json"
   },
-    body: JSON.stringify({
-    "content": jsonBody
-  }),
+    body: JSON.stringify(rawBody),
     redirect: 'follow'
   };
   
