@@ -32,9 +32,9 @@ app.post('/', (req, res) => {
     // Read the JSON body contents
     const jsonBody = req.body.content;
   
-    if (givenAPIKey != jsonBody) {
-      return
-    }
+    //if (givenAPIKey != jsonBody) {
+    //  return
+    //}
 
     // Do something with the JSON data (you can store it, process it, etc.)
     // For example, log it to the console
