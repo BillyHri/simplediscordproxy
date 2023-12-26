@@ -1,0 +1,19 @@
+{
+  "name": "simplediscordproxy",
+  "version": "1.0.0",
+  "description": "A simple discord proxy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "heroku": "^8.7.1"
+  },
+  "engines": {
+    "node": "20.10.0"
+  }
+}
