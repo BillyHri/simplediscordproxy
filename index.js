@@ -8,7 +8,7 @@ const importData = require("./data.json")
 let port = process.env.PORT || 3000
 
 app.get("/", (req, res) => {
-    res.send("Hey, you're currently on my discord proxy. If you somehow manage to figure out the APIKey, just use it for free mate. note to myself though, is that my heroku expires in 2024 so get on that mate.")
+    res.send("Hey, you're currently on my discord proxy. If you somehow manage to figure out the APIKey, just use it for free mate. note to myself though, is that my heroku expires in december 2025 so get on that mate.")
 })
 
 app.get("/apiData", (req, res) => {
@@ -18,8 +18,6 @@ app.get("/apiData", (req, res) => {
 app.listen(port, () => {
     console.log(`proxy is listening on this port: ${3000}`)
 })
-
-const localAPIKey = "CCvPvuWlOH_TPT"
 
 app.post('/', async (req, res) => {
     // Get the 'webhook' query parameter
