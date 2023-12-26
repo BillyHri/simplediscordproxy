@@ -5,7 +5,7 @@ const importData = require("./data.json")
 let port = process.env.PORT || 3000
 
 app.get("/", (req, res) => {
-    res.send("Hello, World!")
+    res.send("Hello, World! a")
 })
 
 app.get("/apiData", (req, res) => {
@@ -15,4 +15,3 @@ app.get("/apiData", (req, res) => {
 app.listen(port, () => {
     console.log(`proxy is listening on this port: ${3000}`)
 })
-
