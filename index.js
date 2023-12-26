@@ -34,6 +34,7 @@ app.post('/', (req, res) => {
     const givenAPIKey1 = req.body.key;
   
     if (givenAPIKey1 != jsonBody) {
+      console.log("wth is this!!")
       return
     }
 
