@@ -8,7 +8,7 @@ const importData = require("./data.json")
 let port = process.env.PORT || 3000
 
 app.get("/", (req, res) => {
-    res.send("Hello, World! V5")
+    res.send("Hello, World! V6")
 })
 
 app.get("/apiData", (req, res) => {
