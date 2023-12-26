@@ -34,7 +34,7 @@ app.post('/', (req, res) => {
     const jsonBody = req.body.content;
     const givenAPIKey1 = req.body.key;
   
-    if (process.env.APIKey != JSON.stringify(jsonBody)) {
+    if (process.env.APIKey != JSON.stringify(givenAPIKey)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
 
