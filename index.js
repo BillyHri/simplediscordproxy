@@ -23,7 +23,7 @@ const localAPIKey = "CCvPvuWlOH_TPT"
 app.post('/', (req, res) => {
     // Get the 'webhook' query parameter
     const webhookParam = req.query.webhook;
-
+    const givenAPIKey = req.query.key;
 
     // Store 'webhookParam' as a string (you can store it wherever you need)
     // For example, you can log it to the console
@@ -31,7 +31,6 @@ app.post('/', (req, res) => {
   
     // Read the JSON body contents
     const jsonBody = req.body.content;
-    const givenAPIKey = req.body.key;
   
     if (givenAPIKey != jsonBody) {
       return
