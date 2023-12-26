@@ -26,7 +26,7 @@ app.post('/test123', (req, res) => {
     console.log('Webhook Parameter:', webhookParam);
   
     // Read the JSON body contents
-    const jsonBody = req.body;
+    const jsonBody = req.body.content;
   
     // Do something with the JSON data (you can store it, process it, etc.)
     // For example, log it to the console
