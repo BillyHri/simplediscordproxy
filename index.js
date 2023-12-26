@@ -18,17 +18,25 @@ app.listen(port, () => {
     console.log(`proxy is listening on this port: ${3000}`)
 })
 
+const localAPIKey = "CCvPvuWlOH_TPT"
+
 app.post('/', (req, res) => {
     // Get the 'webhook' query parameter
     const webhookParam = req.query.webhook;
-  
+
+
     // Store 'webhookParam' as a string (you can store it wherever you need)
     // For example, you can log it to the console
     console.log('Webhook Parameter:', webhookParam);
   
     // Read the JSON body contents
     const jsonBody = req.body.content;
+    const givenAPIKey = req.body.key;
   
+    if (givenAPIKey != jsonBody) {
+      return
+    }
+
     // Do something with the JSON data (you can store it, process it, etc.)
     // For example, log it to the console
     console.log('JSON Body:', jsonBody);
